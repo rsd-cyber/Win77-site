@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Win 77 - Kerjasama</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0b1c3d;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 2px solid #ccc;
+}
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    font-style: italic;
+}
+.gold { color: #fcc203; }
+.menu-icon {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+}
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+/* Banner */
+.header-banner {
+    background-color: #ffcc00;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-family: serif;
+    font-size: 1.1rem;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Container */
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h3 { margin-bottom: 10px; text-align: left; font-size: 1.2rem;}
+
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-accept {
+    background: linear-gradient(to bottom, #fdd835, #fbc02d);
+    border: 1px solid #f9a825;
+    padding: 12px 0;
+    width: 60%;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.instruction { font-size: 0.9rem; margin-top: 10px; }
+
+.info-box {
+    margin-top: 15px;
+    border: 1px solid #e0c2c2;
+    background-color: #fff5f5;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+/* Bottom Nav */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2b1138;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #555;
+}
+.nav-item { color: white; font-size: 1.2rem; cursor: pointer; }
+
+/* Overlay Halaman Baru */
+.success-page {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, #1a2a6c, #b21f1f, #fdbb2d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 100;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">WIN <span class="gold">77</span></div>
+    <div class="menu-icon"><span></span><span></span><span></span></div>
+</div>
+
+<div class="header-banner">
+    PROOF THAT YOU ARE WORTHY OF COOPERATION
+</div>
+
+<div class="container">
+    <div class="form-card">
+        <h3>MASUKKAN NOMINAL</h3>
+        <input type="text" id="nominal" placeholder="Contoh: 2,000,000">
+        
+        <button id="btnAccept" class="btn-accept">ACCEPT</button>
+        <p class="instruction">Klik accept untuk mensetujui</p>
+
+        <div class="info-box">
+            <p>Formulir harus isi saldo Sebesar <b>Rp.2.000.000,-</b> sebagai jaminan anda telah kerja sama dengan PRAGMATIC PLAY dan PGsoft.</p>
+            <p>Uang anda tidak akan hilang.</p>
+            <p>Uang tertanam dalam situs anda.</p>
+            <p>Karena ini adalah sebagai bukti bahwa anda memiliki uang yang cukup untuk perputaran uang dalam permainan, Bahkan Kerjasama dan menjaga nama baik Situs kami.</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer-nav">
+    <div class="nav-item"><span>&#10094;</span></div>
+    <div class="nav-item"><span>&#128179;</span></div>
+    <div class="nav-item"><span>&#127873;</span></div>
+    <div class="nav-item"><span>&#128172;</span></div>
+    <div class="nav-item"><span>&#8962;</span></div>
+</div>
+
+<script>
+document.getElementById('btnAccept').addEventListener('click', function() {
+    const inputNominal = document.getElementById('nominal');
+    const nilai = inputNominal.value.trim();
+
+    if (nilai === "") {
+        alert("MASUKKAN NOMIMAL TERLEBIH DAHULU");
+        inputNominal.focus();
+        inputNominal.style.border = "2px solid red";
+        return; 
+    }
+
+    document.body.innerHTML = `
+        <div class="success-page" style="
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, #1a2a6c, #b21f1f, #fdbb2d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            z-index: 9999;
+            font-family: sans-serif;
+        ">
+            <div style="padding: 30px; background: rgba(0,0,0,0.85); border-radius: 20px; border: 3px solid gold; box-shadow: 0 0 30px rgba(255,215,0,0.5); max-width: 85%;">
+                <div style="font-size: 4rem; margin-bottom: 10px;">✅</div>
+                <h1 style="color: gold; font-size: 2.2rem; margin-bottom: 20px; text-shadow: 2px 2px 4px black;">PROSES BERHASIL!</h1>
+                <p style="font-size: 1.5rem; line-height: 1.6; font-weight: bold;">
+                    Silahkan masuk ke server domain anda dan lakukan penanaman saldo
+                </p>
+                <div style="margin-top: 30px; animation: spin 2s linear infinite;">
+                    <span style="font-size: 3.5rem;">&#9881;</span>
+                </div>
+                <p style="margin-top: 20px; color: #ccc; font-style: italic;">Sistem sedang mensinkronisasi data...</p>
+            </div>
+        </div>
+        <style>
+            @keyframes spin { 100% { transform: rotate(360deg); } }
+        </style>
+    `;
+});
+
+document.getElementById('nominal').addEventListener('input', function() {
+    this.style.border = "1px solid #ccc";
+});
+</script>
+
+</body>
+</html>
